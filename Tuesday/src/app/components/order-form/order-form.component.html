@@ -1,0 +1,27 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <label for="ticker">Ticker:</label>
+    <br/>
+    <input id="ticker" type="text" formControlName="ticker" 
+    [ngClass]="ticker?.invalid ? 'invalidClass':'' "/>
+    <br/>
+    <p>{{orderForm.status}}</p>
+    <label for="qty">Qty: </label>
+    <br/>
+    <input id="qty" type="number" formControlName="qty">
+    <br/>
+
+    <label for="price">Price: </label>
+    <br/>
+    <input id="price" type="text" formControlName="price">
+    <br/>
+
+    <label for="side">Side: </label>
+    <br/>
+    <select id="side"  formControlName="side">
+        <option>BUY</option>
+        <option>SELL</option>
+    </select>
+    <br/>
+
+    <input type="submit">
+</form>
