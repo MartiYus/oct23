@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let order of ordersList">
-       <order-detail [order] = "order"></order-detail>
+    <li *ngFor="let el of portfolio" >
+       <order-detail [order] = "el"></order-detail>
     </li>
 </ul>

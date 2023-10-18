@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "orders-app": {
+    "order-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/orders-app",
+            "outputPath": "dist/order-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "orders-app:build:production"
+              "browserTarget": "order-app:build:production"
             },
             "development": {
-              "browserTarget": "orders-app:build:development"
+              "browserTarget": "order-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "orders-app:build"
+            "browserTarget": "order-app:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "0d883eeb-991d-47a1-a05a-ec69fed1e3c2"
+    "analytics": "6f889b82-6ab3-4bca-9f89-de25182bd0dd"
   }
 }

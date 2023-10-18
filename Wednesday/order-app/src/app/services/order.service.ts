@@ -1,8 +1,9 @@
 import { Observable } from "rxjs";
 import { Order } from "../model/order";
 
-export interface OrderServiceService{
-    getOrders():Observable<Order[]>;
+export interface OrderService{
+
+    getAllOrders():Observable<Order[]>;
 
     saveOrder(newOrder: Order): Observable<any>;
 

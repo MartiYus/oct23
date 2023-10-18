@@ -1,9 +1,11 @@
-<div class="order-container" (click)="panelClicked()">
+<div class="order-container" (click)="divClickHandler()">
     <h2>Ticker: {{order.ticker}}</h2>
     <h3>Price: {{order.price}}</h3>
-    <h4 [ngClass] = "order.side=='BUY' ? 'buyClass' : 'sellClass'">Side: {{order.side}}</h4>
+    <h4 [ngClass]="order.side=='BUY' ? 'blueClass' : 'redClass' " >Side: {{order.side}}</h4>
     <h4>Qty: {{order.qty}}</h4>
-    <button (click) = "clickHandler()" *ngIf= "!isArchived">Archive</button>
-    <input [(ngModel)]="trader" />
-    <p> Trader: {{trader}}</p>
+    <p *ngIf="isArchived"> This order is now archived.</p>
+    <button (click)="clickHandler()" *ngIf="!isArchived" >Archive</button>
+    <input [(ngModel)]="trader" type="text"/>
+    <p>Trader:{{trader}}</p>
 </div>
+

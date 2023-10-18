@@ -2,9 +2,9 @@
     background-color: aliceblue;
     border:1px solid black;
 }
-.buyClass{
-    color: blue;
+.blueClass{
+    color:blue;
 }
-.sellClass{
+.redClass{
     color:red;
 }

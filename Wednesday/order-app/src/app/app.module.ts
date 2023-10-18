@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderFormComponent } from './components/order-form/order-form.component';
-import { AppRoutingModuleModule } from './components/app-routing-module/app-routing-module.module';
+import { OrderLocalService } from './services/order-local.service';
 import { OrderPreviewComponent } from './components/order-preview/order-preview.component';
-import { OrderServiceLocalService } from './services/order-service-local.service';
-import { OrderServiceService } from './services/order-service.service';
 import { environment } from './environment';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -23,12 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModuleModule,
     HttpClientModule
   ],
-  providers: [{provide: 'OrderServiceService', useClass: environment.remoteService}],
+  providers: [{provide: 'OrderService', useClass: environment.remoteService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

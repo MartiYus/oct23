@@ -8,20 +8,21 @@ import { Order } from 'src/app/model/order';
   styleUrls: ['./order-detail.component.css']
 })
 export class OrderDetailComponent {
-    @Input()
-    order!:Order;
 
-    constructor(private router: Router){}
+  isArchived: boolean = false;
 
-    isArchived : boolean = false;
+  @Input()
+  order: Order = new Order("DEFAULT", 100, 100, "DEFAULT");
 
-    trader:string = "";
+  clickHandler(){
+    this.isArchived = true;
+  }
 
-    clickHandler(){
-      this.isArchived = true;
-    }
+  constructor(private router:Router){}
 
-    panelClicked(){
-      this.router.navigate(['orders', this.order.ticker])
-    }
+  trader:string = "";
+
+  divClickHandler(){
+    this.router.navigate(['orders', this.order.ticker])
+  }
 }

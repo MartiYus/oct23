@@ -1,8 +1,8 @@
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-    <label for="ticker">Ticker: </label>
+    <label for="ticker">Ticker:</label>
     <br/>
     <input id="ticker" type="text" formControlName="ticker" 
-    [ngClass]="ticker?.invalid ? 'invalidClass': ''">
+    [ngClass]="ticker?.invalid ? 'invalidClass':'' "/>
     <br/>
     <p>{{orderForm.status}}</p>
     <label for="qty">Qty: </label>
@@ -24,5 +24,4 @@
     <br/>
 
     <input type="submit">
-
 </form>

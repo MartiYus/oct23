@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Order } from 'src/app/model/order';
-import { OrderServiceLocalService } from 'src/app/services/order-service-local.service';
-import { OrderServiceService } from 'src/app/services/order-service.service';
+import { OrderLocalService } from 'src/app/services/order-local.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'orders',
@@ -10,12 +10,12 @@ import { OrderServiceService } from 'src/app/services/order-service.service';
 })
 export class OrdersComponent implements OnInit{
 
-  constructor(@Inject('OrderServiceService')private service: OrderServiceService){}
+  portfolio?: Order[];
 
-  ordersList?: Order[];
+  constructor(@Inject('OrderService') private service: OrderService){}
 
   ngOnInit(): void {
-    this.service.getOrders().subscribe(data=> this.ordersList = data);
+     this.service.getAllOrders().subscribe(data=> this.portfolio = data);
   }
 
 }

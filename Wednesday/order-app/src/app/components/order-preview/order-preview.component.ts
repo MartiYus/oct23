@@ -1,8 +1,9 @@
+import { getNsPrefix } from '@angular/compiler';
 import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/model/order';
-import { OrderServiceLocalService } from 'src/app/services/order-service-local.service';
-import { OrderServiceService } from 'src/app/services/order-service.service';
+import { OrderLocalService } from 'src/app/services/order-local.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-order-preview',
@@ -11,16 +12,19 @@ import { OrderServiceService } from 'src/app/services/order-service.service';
 })
 export class OrderPreviewComponent implements OnInit{
 
-  constructor(private route:ActivatedRoute, @Inject('OrderServiceService') private service: OrderServiceService){}
-
-  order?:Order;
+  constructor(private route: ActivatedRoute, @Inject('OrderService')  private service:OrderService){  
+  }
 
   ngOnInit(): void {
-    this.route.params.subscribe( params => this.getOrder(params));
+    this.route.params.subscribe(params=>this.getOrder(params))
   }
 
   getOrder(params:any){
-    this.service.getOrderByTicker(params.ticker).subscribe(data => this.order = data);
+    this.service.getOrderByTicker(params['ticker']).subscribe(data => this.order = data);
   }
+
+  order?:Order;
+
+
 
 }

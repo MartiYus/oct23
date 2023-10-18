@@ -1,10 +1,7 @@
-import { OrderServiceService } from '../app/services/order-service.service';
-import { OrderServiceLocalService } from './services/order-service-local.service';
-import { OrderServiceRemoteService } from './services/order-service-remote.service';
+import { OrderLocalService } from "./services/order-local.service";
+import { OrderRemoteService } from "./services/order-remote.service";
 
 export const environment = {
-  production: false,
-  localService: OrderServiceLocalService,
-  remoteService: OrderServiceRemoteService
-};
-
+    localService: OrderLocalService,
+    remoteService: OrderRemoteService
+}
