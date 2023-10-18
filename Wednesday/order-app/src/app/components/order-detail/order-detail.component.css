@@ -1,0 +1,10 @@
+.order-container{
+    background-color: aliceblue;
+    border:1px solid black;
+}
+.buyClass{
+    color: blue;
+}
+.sellClass{
+    color:red;
+}

@@ -1,0 +1,9 @@
+<div class="order-container" (click)="panelClicked()">
+    <h2>Ticker: {{order.ticker}}</h2>
+    <h3>Price: {{order.price}}</h3>
+    <h4 [ngClass] = "order.side=='BUY' ? 'buyClass' : 'sellClass'">Side: {{order.side}}</h4>
+    <h4>Qty: {{order.qty}}</h4>
+    <button (click) = "clickHandler()" *ngIf= "!isArchived">Archive</button>
+    <input [(ngModel)]="trader" />
+    <p> Trader: {{trader}}</p>
+</div>
